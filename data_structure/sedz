@@ -1,0 +1,35 @@
+#! /bin/bash
+if [ $# -lt 1 ] ; then
+    echo "input file name separated by space !!"
+    exit 0;
+fi
+for file in $@; do
+    echo $file
+    sed -i "s/初除/删除/g"  $file
+    sed -i "s/发化/变化/g"  $file
+    sed -i "s/极造/构造/g"  $file
+    sed -i "s/弽/录/g"  $file
+    sed -i "s/觃/规/g"  $file
+    sed -i "s/寺/寻/g"  $file
+    sed -i "s/乀/之/g"  $file
+    sed -i "s/夗/多/g"  $file
+    sed -i "s/刟/利/g"  $file
+    sed -i "s/刢/制/g"  $file
+    sed -i "s/癿/的/g"  $file
+    sed -i "s/収/发/g"  $file
+    sed -i "s/丌/不/g"  $file
+    sed -i "s/秱/移/g"  $file
+    sed -i "s/亍/于/g"  $file
+    sed -i "s/匙/区/g"  $file
+    sed -i "s/戒/或/g"  $file
+    sed -i "s/殌/段/g"  $file
+    sed -i "s/殏/每/g"  $file
+    sed -i "s/刞/判/g"  $file
+    sed -i "s/迒/返/g"  $file
+    sed -i "s/秴/稍/g"  $file
+    sed -i "s/弻/归/g"  $file
+    sed -i "s/幵/并/g"  $file
+    sed -i "s/叏/取/g"  $file
+    sed -i "s/刡/到/g"  $file
+done
+
