@@ -28,3 +28,7 @@
 *.app
 
 *.class
+
+#data_structure
+data_structure/aa
+data_structure/bb

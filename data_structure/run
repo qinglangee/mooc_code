@@ -1,0 +1,12 @@
+#! /bin/bash
+if [ $# -lt 1 ] ; then
+    num=1
+else
+    num=$1
+fi
+
+if [ $num -eq 1 ]; then
+    c++ pa01_range.cpp ;./a.out < in/01_02
+elif [ $num -eq 11 ]; then
+    c++ pa01_range_simple.cpp ;./a.out < in/01_02
+fi

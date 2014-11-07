@@ -4,8 +4,8 @@
 // stdlib.h for rand() func
 
 
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
 
 
@@ -188,7 +188,7 @@ template <typename T> Rank  Vector<T>::binSearch(T* A, T const& e, Rank lo, Rank
 // 二分查找算法(版本C):在有序向量的区间[lo, hi)内查找元素e,0 <= lo <= hi <= _size
 template <typename T> Rank Vector<T>::insertBinSearch(T* A, T const& e, Rank lo, Rank hi) const{
 
-        cout<<lo;
+        // cout<<lo;
     while (lo < hi) { //每步迭代仅需做一次比较判断,有两个分支
         Rank mi = (lo + hi) >> 1; //以中点为轴点
         (e < A[mi]) ? hi = mi : lo = mi + 1; //经比较后确定深入[lo, mi)或(mi, hi)

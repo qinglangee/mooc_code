@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include "Vector.h"
 
@@ -25,21 +26,15 @@ int main(){
     //     cout<< s[i] << " ";
     // }
     // cout<<endl;
-    s.sort();
     for(int i = 0; i < m; i++){
     	int count = 0;
-        int a = s.insertBinSearch(start[i]);
-        int b = s.insertBinSearch(end[i]);
-    	// cout<<a<<" "<<b<<endl;
-
-        if(start[i] != s[a] || a == -1 || a == s.size()){
-            count = b - a;
-        }else{
-            count = b - a + 1;
+        int head = start[i];
+        int tail = end[i];
+        for(int j = 0; j < s.size(); j++){
+            if(s[j] >= head && s[j]<= tail){
+                count++;
+            }
         }
-
-        // cout<<a<<" "<<b<<endl;
-        count = count < 0 ? 0 : count;
     	cout<<count<<endl;
     }
 }
