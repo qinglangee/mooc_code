@@ -1,12 +1,14 @@
 #! /bin/bash
 if [ $# -lt 1 ] ; then
-    num=1
+    num=2
 else
     num=$1
 fi
 
 if [ $num -eq 1 ]; then
-    c++ pa01_range.cpp ;./a.out < in/01_02
+    c++ pa01_range.cpp && ./a.out < in/01_01
 elif [ $num -eq 11 ]; then
-    c++ pa01_range_simple.cpp ;./a.out < in/01_02
+    c++ pa01_range_simple.cpp && ./a.out < in/01_01
+elif [ $num -eq 2 ]; then
+    c++ pa02_train.cpp && ./a.out < in/02_01 && ./a.out < in/02_02
 fi

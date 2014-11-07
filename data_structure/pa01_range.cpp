@@ -1,24 +1,26 @@
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 #include "Vector.h"
 
 
 using namespace std;
 int main(){
 	int m , n;
-    cin>>n;
-    cin>>m;
+    scanf("%d", &n);
+    scanf("%d", &m);
     Vector<int> s;;
     int num;
     for(int i=0;i<n;i++){
-        cin>>num;
+        scanf("%d", &num);
         s.insert(num);
     }
     Vector<int> start; Vector<int> end;
     for(int i=0; i < m; i++){
         int num;
-    	cin>>num;
+        scanf("%d", &num);
         start.insert(num);
-    	cin>>num;
+        scanf("%d", &num);
         end.insert(num);
     }
     // for(int i = 0; i < s.size(); i++){
@@ -29,7 +31,7 @@ int main(){
     for(int i = 0; i < m; i++){
     	int count = 0;
         int a = s.insertBinSearch(start[i]);
-        int b = s.insertBinSearch(end[i]);
+        int b = s.insertBinSearch(end[i], a, s.size());
     	// cout<<a<<" "<<b<<endl;
 
         if(start[i] != s[a] || a == -1 || a == s.size()){

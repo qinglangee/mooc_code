@@ -27,6 +27,7 @@ int main(){
     // }
     // cout<<endl;
     for(int i = 0; i < m; i++){
+        int temp = -1;
     	int count = 0;
         int head = start[i];
         int tail = end[i];

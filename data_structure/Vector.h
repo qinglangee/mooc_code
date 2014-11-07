@@ -49,6 +49,7 @@ public:
     { return (0 >= _size) ? -1 : search(e, 0, _size); }
     Rank insertBinSearch(T const& e) const//有序向量区间查找
     { return (0 >= _size) ? -1 : insertBinSearch(_elem, e, 0, _size); }
+    Rank insertBinSearch(T const& e, Rank lo, Rank hi) const;//有序向量区间查找
     Rank search(T const& e, Rank lo, Rank hi) const;//有序向量区间查找
     Rank binSearch(T* A, T const& e, Rank lo, Rank hi) const;//有序向量区间查找
     Rank insertBinSearch(T* A, T const& e, Rank lo, Rank hi) const;//有序向量区间查找
@@ -185,6 +186,13 @@ template <typename T> Rank  Vector<T>::binSearch(T* A, T const& e, Rank lo, Rank
     return -1; //查找失败
 } //有多个命中元素时,不能保证返回秩最大者;查找失败时,简单地返回-1,而不能指示失败的位置
 
+
+template <typename T> Rank Vector<T>::insertBinSearch(T const& e, Rank lo, Rank hi) const//有序向量区间查找
+{
+    lo = lo < 0 ? 0 : lo;
+    hi = hi > _size ? _size : hi; 
+    return (0 >= _size) ? -1 : insertBinSearch(_elem, e, lo, hi); 
+}
 // 二分查找算法(版本C):在有序向量的区间[lo, hi)内查找元素e,0 <= lo <= hi <= _size
 template <typename T> Rank Vector<T>::insertBinSearch(T* A, T const& e, Rank lo, Rank hi) const{
 
@@ -234,7 +242,8 @@ template <typename T> void Vector<T>::sort(Rank lo, Rank hi){ //对[lo, hi)排�
         // case 3: mergeSort(lo, hi); break; //归并排序
         // case 4: heapSort(lo, hi); break; //堆排序(稍后介绍)
 
-        default: quickSort(lo, hi); break; //快速排序(稍后介绍)
+        // default: quickSort(lo, hi); break; //快速排序(稍后介绍)
+        default: mergeSort(lo, hi); break; //快速排序(稍后介绍)
     }
 }
 template <typename T> void Vector<T>::unsort(Rank lo, Rank hi){ //对[lo, hi)置乱

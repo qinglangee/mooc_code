@@ -1,4 +1,5 @@
 #! /bin/bash
 #tar -cf ~/temp/d3/aa.tar Vector.h pa01_range.cpp
 
-tar -cf ~/temp/d3/aa.tar Vector.h pa01_range.cpp
+#tar -cf ~/temp/d3/aa.tar Vector.h pa01_range.cpp
+tar -cf ~/temp/d3/aa.tar ZStack.h pa02_train.cpp

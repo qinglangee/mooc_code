@@ -1,17 +1,13 @@
 #include <iostream>
 #include <stdlib.h>
+#include <stdio.h>
 #include "Vector.h"
 
 using namespace std;
 
-int main() {
-    Vector<int> v;
-    v.insert(1);
-    v.insert(3);
-    v.insert(7);
-    v.insert(9);
-    v.insert(11);
-    int i4 = v.insertBinSearch(4);
-    cout<<i4<<endl;
-    return 0;
-}
+int main(){
+    char a;
+    fread(&a, 1, 1, stdin);
+    int b = atoi(&a);
+    cout<<b<<endl;
+} 
