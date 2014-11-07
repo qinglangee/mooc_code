@@ -46,10 +46,19 @@ int main(){
     bool can = true;
     while(!sB.empty()){
     	// cout<<"sb size:" << sB.size()<<endl;
+
+    	// A 已经放完
     	if(sA.empty()){
     		// pStack(sS);
     		// pStack(sB);
     		// cout<<"sS top:"<<sS.top()<<" sB top:"<<sB.top()<<endl;
+
+    		if(sS.empty()){
+    			can = false;
+    			printf("%s", "No\n");
+    			break;
+    		}
+    		
     		if(sS.top() == sB.top()){
     			sS.pop();
     			sB.pop();
@@ -59,19 +68,22 @@ int main(){
     			// cout<<"=====01"<<endl;
     			can = false;
     			printf("%s", "No\n");
+    			break;
     		}
     	}
-    	if(sB.top() == sA.top() && !sA.empty()){
+
+
+    	if(sB.top() == sA.top() && !sA.empty()){   // A B 一样, 直通车
     		// cout<<sB.top() << sA.top()<<endl;
     		// cout<<1<<endl;
     		sA.pop();
     		sB.pop();
     		action.push(1); // 1 是 push
     		action.push(0); // 0 是 pop
-    	} else if(sA.top() < sB.top()){
+    	} else if(sA.top() < sB.top()){         // A 需要入栈
     		if(sS.full()){
-    			can = false;
     			// cout<<"=====02"<<endl;
+    			can = false;
     			printf("%s", "No");
     			break;
     		}
@@ -79,14 +91,20 @@ int main(){
     		sS.push(sA.pop());
     		action.push(1); // push
     	} else {
+    		if(sS.empty()){
+    			can = false;
+    			printf("%s", "No\n");
+    			break;
+    		}
+
     		if(sS.top() == sB.top()){
     		// cout<<3<<endl;
     			sS.pop();
     			sB.pop();
     			action.push(0); // pop
     		}else{
-    			can = false;
     			// cout<<"=====03"<<endl;
+    			can = false;
     			printf("%s", "No\n");
     			break;
     		}
